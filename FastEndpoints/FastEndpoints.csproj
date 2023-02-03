@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <NoWarn>1701;1702;CS1591;CS1573,CA2254;RCS1079;CS8618;IDE0022</NoWarn>
+        <Description>A light-weight REST Api framework for ASP.Net 6 and newer that implements REPR (Request-Endpoint-Response) Pattern.</Description>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>http, rest, rest-api, web-api, webapi, aspnet, aspnetcore, dotnet6, minimal-api, vertical-slice-architecture, repr-pattern</PackageTags>
+        <OutputType>Library</OutputType>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Attributes\FastEndpoints.Attributes.csproj" />
+        <PackageReference Include="FluentValidation" Version="11.4.0" />
+        <PackageReference Include="MemoryPack" Version="1.9.12" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" Link="Content\Readme" />
+        <None Include="..\icon.png" Pack="true" PackagePath="\" Link="Content\Icon" />
+        <None Include="changelog.md" Pack="false" Link="Content\Changelog" />
+        <None Include="..\Directory.Build.props" Pack="false" Link="Content\BuildProps" />
+        <None Include="JetBrains\ExternalAnnotations.xml" Pack="true" PackagePath="lib\$(TargetFramework)\$(AssemblyName).ExternalAnnotations.xml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+</Project>
